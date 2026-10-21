@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#102a43">
+  <meta name="description" content="CV của Vũ Anh Đào - ứng tuyển vị trí Thực tập sinh / Junior Developer.">
+  <title>Vũ Anh Đào | CV Developer</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #172b4d;
+      --muted: #52647a;
+      --accent: #087f8c;
+      --accent-light: #e4f4f3;
+      --line: #dce5ec;
+      --paper: #fff;
+      --canvas: #edf2f6;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 40px 20px;
+      background: var(--canvas);
+      color: var(--ink);
+      font-family: "Segoe UI", Arial, sans-serif;
+      font-size: 15px;
+      line-height: 1.65;
+    }
+
+    a {
+      color: inherit;
+      text-decoration-color: #8ca3b8;
+      text-underline-offset: 3px;
+      overflow-wrap: anywhere;
+    }
+
+    a:hover {
+      color: var(--accent);
+    }
+
+    .resume {
+      width: min(100%, 1000px);
+      margin: 0 auto;
+      overflow: hidden;
+      background: var(--paper);
+      border-radius: 16px;
+      box-shadow: 0 18px 55px rgb(16 42 67 / 12%);
+    }
+
+    .hero {
+      position: relative;
+      padding: 48px 58px 42px;
+      background: #102a43;
+      color: #fff;
+    }
+
+    .hero::after {
+      position: absolute;
+      right: 58px;
+      bottom: -1px;
+      width: 92px;
+      height: 5px;
+      background: #53d3c3;
+      content: "";
+    }
+
+    .eyebrow {
+      margin: 0 0 7px;
+      color: #9be3dc;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(34px, 6vw, 48px);
+      letter-spacing: 0.015em;
+      line-height: 1.15;
+    }
+
+    .headline {
+      margin: 12px 0 0;
+      color: #d3e2ec;
+      font-size: 18px;
+    }
+
+    .contact-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px 24px;
+      margin: 25px 0 0;
+      padding: 0;
+      color: #e2edf4;
+      font-size: 13px;
+      list-style: none;
+    }
+
+    .contact-list a {
+      text-decoration-color: #829caf;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.65fr) minmax(240px, 0.85fr);
+    }
+
+    .main-column,
+    .side-column {
+      padding: 38px 42px 46px;
+    }
+
+    .side-column {
+      background: #f6f9fb;
+      border-left: 1px solid #edf1f4;
+    }
+
+    section + section {
+      margin-top: 32px;
+    }
+
+    h2 {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 0 0 16px;
+      color: var(--ink);
+      font-size: 16px;
+      letter-spacing: 0.075em;
+      text-transform: uppercase;
+    }
+
+    h2::before {
+      width: 4px;
+      height: 19px;
+      flex: 0 0 4px;
+      border-radius: 3px;
+      background: var(--accent);
+      content: "";
+    }
+
+    p {
+      margin: 0;
+    }
+
+    .summary {
+      color: #394d63;
+    }
+
+    .entry + .entry {
+      margin-top: 24px;
+      padding-top: 22px;
+      border-top: 1px solid var(--line);
+    }
+
+    .entry-heading {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    h3 {
+      margin: 0;
+      font-size: 16px;
+      line-height: 1.45;
+    }
+
+    .date {
+      flex: 0 0 auto;
+      padding: 3px 9px;
+      border-radius: 20px;
+      background: var(--accent-light);
+      color: #086b74;
+      font-size: 11px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .subheading {
+      margin-top: 5px;
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .project-meta {
+      margin-top: 9px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .project-meta strong {
+      color: var(--ink);
+    }
+
+    ul {
+      margin: 10px 0 0;
+      padding-left: 19px;
+    }
+
+    li {
+      padding-left: 2px;
+    }
+
+    li + li {
+      margin-top: 5px;
+    }
+
+    li::marker {
+      color: var(--accent);
+    }
+
+    .skill-group + .skill-group {
+      margin-top: 18px;
+    }
+
+    .skill-label {
+      display: block;
+      margin-bottom: 5px;
+      color: var(--ink);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .skill-group p,
+    .education-detail {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .education-detail {
+      margin-top: 7px;
+    }
+
+    .education-detail li + li {
+      margin-top: 3px;
+    }
+
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-top: 12px;
+    }
+
+    .tag {
+      padding: 4px 9px;
+      border: 1px solid #d8e6e9;
+      border-radius: 5px;
+      background: #fff;
+      color: #385568;
+      font-size: 11px;
+      font-weight: 600;
+    }
+
+    @media (max-width: 700px) {
+      body {
+        padding: 0;
+      }
+
+      .resume {
+        border-radius: 0;
+      }
+
+      .hero {
+        padding: 38px 26px 32px;
+      }
+
+      .hero::after {
+        right: 26px;
+      }
+
+      .layout {
+        grid-template-columns: 1fr;
+      }
+
+      .main-column,
+      .side-column {
+        padding: 30px 26px;
+      }
+
+      .side-column {
+        border-top: 1px solid var(--line);
+        border-left: 0;
+      }
+
+      .entry-heading {
+        flex-direction: column;
+        gap: 5px;
+      }
+    }
+
+    @media print {
+      @page {
+        size: A4;
+        margin: 12mm;
+      }
+
+      body {
+        padding: 0;
+        background: #fff;
+        font-size: 10pt;
+        print-color-adjust: exact;
+        -webkit-print-color-adjust: exact;
+      }
+
+      .resume {
+        width: 100%;
+        overflow: visible;
+        border-radius: 0;
+        box-shadow: none;
+      }
+
+      .hero {
+        padding: 28px 34px;
+      }
+
+      .main-column,
+      .side-column {
+        padding: 26px 28px;
+      }
+
+      section,
+      .entry {
+        break-inside: avoid;
+      }
+
+      a {
+        text-decoration: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <article class="resume">
+    <header class="hero">
+      <p class="eyebrow">Curriculum Vitae</p>
+      <h1>VŨ ANH ĐÀO</h1>
+      <p class="headline">Thực tập sinh / Junior Developer <span aria-hidden="true">·</span> Công nghệ Thông tin</p>
+      <ul class="contact-list" aria-label="Thông tin liên hệ">
+        <li><a href="tel:+84860009212">086 000 9212</a></li>
+        <li><a href="mailto:vuanhdao.work@email.com">vuanhdao.work@email.com</a></li>
+        <li>Thái Nguyên, Việt Nam</li>
+        <li><a href="https://linkedin.com/in/vuanhdao" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+        <li><a href="https://github.com/vuanhdao" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+      </ul>
+    </header>
+
+    <div class="layout">
+      <main class="main-column">
+        <section aria-labelledby="objective">
+          <h2 id="objective">Mục tiêu nghề nghiệp</h2>
+          <p class="summary">
+            Sinh viên năm cuối chuyên ngành Công nghệ Thông tin với nền tảng vững vàng về cấu trúc dữ liệu,
+            giải thuật và phát triển phần mềm/web. Mong muốn ứng tuyển vị trí Thực tập sinh / Fresher để vận
+            dụng kiến thức học thuật, khả năng tự nghiên cứu và tư duy logic vào các dự án thực tế; từ đó đóng
+            góp hiệu quả vào sự phát triển của sản phẩm và hoàn thiện năng lực kỹ thuật chuyên môn.
+          </p>
+        </section>
+
+        <section aria-labelledby="projects">
+          <h2 id="projects">Dự án nổi bật</h2>
+          <article class="entry">
+            <div class="entry-heading">
+              <h3>Website Quản Lý Công Việc Cá Nhân</h3>
+              <span class="date">03/2026 – 06/2026</span>
+            </div>
+            <p class="subheading">Task Management App · Lập trình viên chính (Full-stack)</p>
+            <p class="project-meta"><strong>Công nghệ:</strong> ReactJS, Node.js, Express, MongoDB, Tailwind CSS</p>
+            <p class="project-meta">
+              Hệ thống hỗ trợ người dùng tạo, phân loại, đặt hạn chót và theo dõi trạng thái công việc cá nhân.
+            </p>
+            <ul>
+              <li>Thiết kế kiến trúc RESTful API cho xác thực người dùng (JWT) và CRUD công việc.</li>
+              <li>Xây dựng giao diện responsive, tích hợp bộ lọc tìm kiếm theo trạng thái và độ ưu tiên.</li>
+              <li>Quản lý mã nguồn qua GitHub và triển khai ứng dụng trên Vercel / Render.</li>
+            </ul>
+            <div class="tag-list" aria-label="Công nghệ dự án">
+              <span class="tag">ReactJS</span>
+              <span class="tag">Node.js</span>
+              <span class="tag">MongoDB</span>
+              <span class="tag">Tailwind CSS</span>
+            </div>
+          </article>
+
+          <article class="entry">
+            <div class="entry-heading">
+              <h3>Hệ Thống Đặt Sách Trực Tuyến</h3>
+              <span class="date">09/2025 – 12/2025</span>
+            </div>
+            <p class="subheading">Bookstore E-commerce · Backend Developer / Nhóm 3 người</p>
+            <p class="project-meta"><strong>Công nghệ:</strong> Java, Spring Boot, MySQL</p>
+            <p class="project-meta">
+              Nền tảng bán sách trực tuyến với chức năng xem danh mục, giỏ hàng, đặt hàng và quản trị viên.
+            </p>
+            <ul>
+              <li>Thiết kế lược đồ cơ sở dữ liệu quan hệ (ERD) và chuẩn hóa dữ liệu.</li>
+              <li>Xây dựng module thanh toán mô phỏng và quản lý kho hàng.</li>
+              <li>Viết unit test cho các service logic chính.</li>
+            </ul>
+            <div class="tag-list" aria-label="Công nghệ dự án">
+              <span class="tag">Java</span>
+              <span class="tag">Spring Boot</span>
+              <span class="tag">MySQL</span>
+            </div>
+          </article>
+        </section>
+
+        <section aria-labelledby="activities">
+          <h2 id="activities">Hoạt động & kinh nghiệm</h2>
+          <div class="entry">
+            <div class="entry-heading">
+              <h3>Thành viên Ban Nội dung / Kỹ thuật</h3>
+              <span class="date">2024 – 2025</span>
+            </div>
+            <p class="subheading">CLB Tin học sinh viên</p>
+            <ul>
+              <li>Hỗ trợ tổ chức workshop hướng nghiệp và chia sẻ kinh nghiệm lập trình cho sinh viên khóa dưới.</li>
+              <li>Điều phối các sự kiện hackathon quy mô cấp trường.</li>
+            </ul>
+          </div>
+        </section>
+      </main>
+
+      <aside class="side-column">
+        <section aria-labelledby="education">
+          <h2 id="education">Học vấn</h2>
+          <h3>Trường Đại học Công nghệ thông tin và truyền thông Thái Nguyên</h3>
+          <p class="subheading">2022 – 2027</p>
+          <ul class="education-detail">
+            <li>Chuyên ngành: Công nghệ Thông tin</li>
+            <li>GPA: 3.48 / 4.0</li>
+            <li>Tốt nghiệp dự kiến: 2027</li>
+          </ul>
+        </section>
+
+        <section aria-labelledby="skills">
+          <h2 id="skills">Kỹ năng chuyên môn</h2>
+          <div class="skill-group">
+            <span class="skill-label">Ngôn ngữ lập trình</span>
+            <p>Java, C++, JavaScript / TypeScript, Python (cơ bản)</p>
+          </div>
+          <div class="skill-group">
+            <span class="skill-label">Web & Frameworks</span>
+            <p>HTML5 / CSS3, ReactJS, Node.js (Express) / Spring Boot</p>
+          </div>
+          <div class="skill-group">
+            <span class="skill-label">Cơ sở dữ liệu</span>
+            <p>MySQL, PostgreSQL, MongoDB</p>
+          </div>
+          <div class="skill-group">
+            <span class="skill-label">Công cụ & quy trình</span>
+            <p>Git / GitHub, Postman, VS Code, Agile / Scrum</p>
+          </div>
+        </section>
+
+        <section aria-labelledby="other-skills">
+          <h2 id="other-skills">Kỹ năng khác</h2>
+          <div class="skill-group">
+            <span class="skill-label">Kỹ năng mềm</span>
+            <p>Làm việc nhóm, giao tiếp thuyết trình, tư duy giải quyết vấn đề, quản lý thời gian.</p>
+          </div>
+          <div class="skill-group">
+            <span class="skill-label">Ngoại ngữ</span>
+            <p>Tiếng Anh: đọc hiểu tài liệu kỹ thuật tốt.</p>
+          </div>
+        </section>
+      </aside>
+    </div>
+  </article>
+</body>
+</html>
